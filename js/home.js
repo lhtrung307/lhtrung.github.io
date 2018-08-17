@@ -46,4 +46,13 @@
 
 alert("Hello\nHow are you?");
 
+let recentText = document.getElementById("recentText");
 
+function getRecentText(){
+	let firebaseRef = firebase.database().ref().child("recentText");
+	firebaseRef.on("value", function(datasnapshot){
+		recentText.innerText = datasnapshot.val();
+	});
+}
+
+getRecentText();
