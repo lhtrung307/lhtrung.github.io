@@ -44,6 +44,6 @@
 // console.log(Tom[CAT]());
 // console.log(Tom.eat("mouse", "rice"));
 
-window.alert("Okay");
+alert("Hello\nHow are you?");
 
 
