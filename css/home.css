@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body{
+   background-color: gray !important;
+   }
+
+.header .background{
+	padding: 0;
+}
+.header .background{
+	max-height: 300pt;
+}
+.center{
+	/*position: relative;*/
+}
+.center .cLeft{	
+	float: left;
+	padding: 0pt;
+}
+.center .cLeft .mainInfor{
+	border: 0.5px solid gray;
+	background-color: white;
+
+}
+.center .cLeft .mainInfor .item{
+	border-bottom: 0.5px solid #B0ABAB;
+	/*margin-bottom: 20pt;
+	padding-bottom: 20pt;*/
+	padding: 15pt 0pt; 
+
+}
+.center .cLeft .mainInfor .item .item-image{
+	/*padding: 0;*/
+	
+}
+.center .cLeft .mainInfor .item .item-information{
+	/*padding: 0;*/
+}
+a.title{
+	color: black;
+	font-size: 20pt;
+	font-style: italic;
+}
+a.title:hover{
+	color: red;
+    cursor: pointer;
+    text-decoration: none;
+}
+.center .cLeft .mainInfor .item .item-information{
+	
+}
+.general{
+	margin-bottom: 10pt;
+	/*margin-top: 10pt;*/
+}
+.general .author{
+	margin-right: 10pt;
+}
+.general .time{
+	margin-right: 10pt;
+}
+
+.center .cRight{
+	float: right;
+	/*position: relative;*/
+	padding: 0pt;
+	
+}
+.center .cRight .recent{
+	border: 0.5px solid gray;
+	padding-top: 10pt;
+	padding-bottom: 10pt;
+	padding-left: 10pt;
+	margin-bottom: 10pt;
+	background-color: white;
+}
+.center .cRight .recent .tagName{
+display: block;
+}
+.recent .tagName .tagNameItem{
+background-color: #CAC7C7;
+padding: 5pt;
+display: inline-block !important;
+margin-bottom: 5pt;
+}
+.recent .tagName a{
+	color: black;
+}
+
+.recent .tagName a:hover{
+	color: red;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.cRight .recentTitle{
+	font-weight: bold;
+	font-size: 15pt;
+/*	margin-top: 10pt;*/
+	/*position: absolute;*/
+
+}
+.cRight .recentItems .recentItem{
+margin-bottom: 10pt;
+}
+.cRight .recentItems .recentItem a{
+color: black;
+
+}
+
+.cRight .recentItems .recentItem a:hover{
+	color: red;
+ 	cursor: pointer;
+    text-decoration: none;
+}
+.cRight .banner{
+	margin: 10pt 0pt;
+}
+
+
+/*.header .hLeft #logo{
+	text-align: center;
+	color: blue;
+	font-size: 35pt;
+  	font-weight: 600;
+  	font-style: italic;  	
+	
+}*/
+
+
+/*.center{
+	width: 100%;
+	height: 800pt;
+}
+.center .cLeft{
+	background-color: black;
+	height: 800pt;
+}
+.center .cRight{
+	background-color: Pink;
+	height: 800pt;
+}
+.footer{
+	background-color: blue;
+	width: 100%;
+	height: 300pt;
+}*/
