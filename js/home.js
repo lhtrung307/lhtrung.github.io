@@ -44,7 +44,6 @@
 // console.log(Tom[CAT]());
 // console.log(Tom.eat("mouse", "rice"));
 
-alert("Hello\nHow are you?");
 
 let recentText = document.getElementById("recentText");
 
@@ -56,3 +55,24 @@ function getRecentText(){
 }
 
 getRecentText();
+
+let postDay = document.getElementById("postDay");
+let postTitle = document.getElementById("postTitle");
+let postContent = document.getElementById("postContent");
+
+function getPost(){
+	let firebaseRef = firebase.database().ref().child("Post");
+	let post;
+	firebaseRef.on("value", function(datasnapshot){
+		post = datasnapshot.val();
+		let {createDay, title, content} = post;
+		postDay.innerText = createDay;
+		postTitle.innerText = title;
+		postContent.innerText = content;
+	});
+	
+
+}
+
+getPost();
+

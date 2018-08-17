@@ -1,0 +1,70 @@
+<h1><a id="Javascript_note_0"></a>Javascript note</h1>
+<h2><a id="Array_1"></a>Array</h2>
+<ul>
+<li>
+<p>When we work with array in JS, we are passing by references. If we want to create brand new array form array we can use spread operator (…):</p>
+<pre><code>let example1 = [1, 2, 3, 4];
+let example2 = [...example1];
+
+console.log(example2);
+</code></pre>
+<p>Result of code above is like this: <code>[1, 2, 3, 4]</code></p>
+<p>And another way is using the map functionality:</p>
+<pre><code>let example1 = [1, 2, 3, 4];
+let example2 = example1.map((element) =&gt; {
+    return element;
+});
+
+console.log(example2);
+</code></pre>
+<p>This part of code has the same result: <code>[1, 2, 3, 4]</code>.</p>
+</li>
+</ul>
+<h2><a id="Object_21"></a>Object</h2>
+<ul>
+<li>Object in js is passing by references too. We can create new object by using <code>Object.assign()</code> method:<pre><code>let example1 = {
+    lastName: 'Trung'
+};
+let example2 = Object.assign({}, example1);
+
+console.log(example2);
+</code></pre>
+This should print the new object just like <code>example1</code>: <code>{lastName: &quot;Trung&quot;}</code></li>
+</ul>
+<h2><a id="ES6_32"></a>ES6</h2>
+<ul>
+<li>Template Literals<br>
+It gives us a way to concatenate 2 strings:<pre><code>let firstName = 'Luu Hoang';
+let lastName = 'Trung';
+
+let fullName = `${firstName} ${lastName}`;
+
+console.log(fullName);
+</code></pre>
+And we have the full name: <code>Luu Hoang Trung</code>. Pretty easy, right?<br>
+It also gives us an easy way of having variables:<pre><code>let num1 = 18;
+let magicNumber = 22;
+let lastName = 'Trung'
+
+let sum = `${magicNumber + num1} ${lastName}`;
+
+console.log(sum);
+</code></pre>
+Boom, we got this: <code>40 Trung</code>.</li>
+<li>Destructuring Objects<br>
+First, we have a object like this:<pre><code>const personalInfomation = {
+    firstName: 'Luu Hoang',
+    lastName: 'Trung',
+    city: 'Ho Chi Minh City',
+    district: '9'
+};
+</code></pre>
+Everytime we want to use <code>firstName</code> and <code>lastName</code> infomation from <code>personalInfomation</code> we have to do something like this <code>personalInfomation.firstName</code> or <code>personalInfomation.lastName</code> pretty long, huh?<br>
+But with Destructuring Objects we can reassign the value like this:<pre><code>const {firstName, lastName} = personalInfomation;
+console.log(`${firstName} ${lastName}`);
+</code></pre>
+Or like this:<pre><code>const {firstName: fn, lastName: ln} = personalInfomation;
+console.log(`${fn} ${ln}`);
+</code></pre>
+Now we can access it easier.</li>
+</ul>
