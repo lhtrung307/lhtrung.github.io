@@ -1,4 +1,3 @@
-<h1><a id="Javascript_note_0"></a>Javascript note</h1>
 <h2><a id="Array_1"></a>Array</h2>
 <ul>
 <li>

@@ -1,0 +1,136 @@
+﻿Hôm nay rảnh rỗi xem&nbsp;mấy video về class String trong JAVA với lại tổng họp một số phương thức thông dụng nên đăng bài cho mọi người xem làm tài liệu khi sử dụng String. Mình tổng hợp lại bằng tiếng Anh nên mọi người chịu khó đọc, có gì không hiểu thì dịch, xem ví dụ nhé. Hehe. <code>&nbsp; &nbsp;&nbsp;</code><br />
+<br />
+int length()<br />
+Return the length of this string.<br />
+<br />
+Ex:<br />
+public class StringMethods {<br />
+<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>public static void main(String[] args) {<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>String str = "Have a nice day!";<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>System.out.println(str.length());<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>}<br />
+<br />
+}<br />
+Return value is 16.<br />
+<br />
+boolean isEmpty()<br />
+Return true if length == 0, return false if length != 0.<br />
+<br />
+Ex:<br />
+public class StringMethods {<br />
+<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>public static void main(String[] args) {<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>String str = "Have a nice day!";<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>System.out.println(str.isEmpty());<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>}<br />
+<br />
+}<br />
+The return value is false.<br />
+<br />
+char charAt(int index)<br />
+Return the char value at the specified index if&nbsp;index &gt;= 0 and index &lt; length.<br />
+<br />
+Ex:<br />
+public class StringMethods {<br />
+<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>public static void main(String[] args) {<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>String str = "Have a nice day!";<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>System.out.println(str.charAt(5));<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>}<br />
+<br />
+}<br />
+Return value is 'a'.<br />
+<br />
+boolean startsWith(String prefix, int toffset)<br />
+Return true if the substring of this string beginning at the specified index starts with the specified prefix and vice versa.<br />
+<br />
+Ex:<br />
+public class StringMethods {<br />
+<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>public static void main(String[] args) {<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>String str = "Have a nice day!";<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>System.out.println(str.startsWith("nic", 7));<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>}<br />
+<br />
+}<br />
+The return value is true.<br />
+<br />
+boolean startsWith(String prefix)<br />
+Return true if this string starts with the specified prefix and vice versa.<br />
+<br />
+Ex:<br />
+public class StringMethods {<br />
+<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>public static void main(String[] args) {<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>String str = "Have a nice day!";<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>System.out.println(str.startsWith("Hav"));<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>}<br />
+<br />
+}<br />
+The return value is true<br />
+<br />
+boolean endsWith(String suffix)<br />
+Return true if this string ends with the specified suffix and vice versa.<br />
+<br />
+Ex:<br />
+public class StringMethods {<br />
+<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>public static void main(String[] args) {<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>String str = "Have a nice day!";<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>System.out.println(str.endsWith("dog"));<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>}<br />
+<br />
+}<br />
+The return value is false.<br />
+<br />
+int indexOf(int ch)<br />
+Search for the first instance of ch and return its place.<br />
+<br />
+<br />
+Ex:<br />
+public class StringMethods {<br />
+<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>public static void main(String[] args) {<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>String str = "Have a nice day!";<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>System.out.println(str.endsWith("dog"));<br />
+<span class="Apple-tab-span" style="white-space: pre;"> </span>}<br />
+<br />
+}<br />
+<br />
+int indexOf(int ch, int fromIndex)<br />
+Search for the first instance of ch and return its place but starting the search at the specified index.<br />
+<br />
+int indexOf(String str)<br />
+Returns the index within this string of the first occurrence of the specified substring.<br />
+<br />
+String substring(int beginIndex)<br />
+Return a string that is a substring of this string beginning at the specified index to the end of this string.<br />
+<br />
+String substring(int beginIndex, int endIndex)<br />
+Returns a string that is a substring of this string. The substring begins at the specified beginIndex and extends to the character at endIndex - 1.<br />
+<br />
+String replace(char oldChar, char newChar)<br />
+Return a string resulting from replacing all occurrences&nbsp;of oldChar in this string with newChar.<br />
+<br />
+String toLowerCase()<br />
+Converts all ò the characters in this string to lower case using the rule of the default locale.<br />
+<br />
+String toUpperCase()<br />
+Converts all of the characters in this string to uppercase using the rule of the default locale.<br />
+<br />
+String trim()<br />
+Return a string whose value is this string, with any leading and trailing whitespace removed.<br />
+<br />
+char[] toCharArray()<br />
+Converts this string to a new characters array.<br />
+<br />
+static String format(String format, Object... args)<br />
+Returns a formatted string using the specified format string and arguments<br />
+<br />
+static String valueOf(Object obj)<br />
+Return the string representation of the object argument.<br />
+<br />
+<br />
+<br />
+<br />

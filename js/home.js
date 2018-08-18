@@ -58,7 +58,7 @@ getRecentText();
 
 let postDay = document.getElementById("postDay");
 let postTitle = document.getElementById("postTitle");
-let postContent = document.getElementById("postContent");
+// let postContent = document.getElementById("postContent");
 
 function getPost(){
 	let firebaseRef = firebase.database().ref().child("Post");
@@ -68,7 +68,10 @@ function getPost(){
 		let {createDay, title, content} = post;
 		postDay.innerText = createDay;
 		postTitle.innerText = title;
-		postContent.innerText = content;
+		// let pTag = document.createElement("P");
+		// postContent.appendChild(pTag);
+		// console.log(postContent.querySelectorAll('p'));
+		// postContent.querySelectorAll('p')[0].innerHTML = content;
 	});
 	
 

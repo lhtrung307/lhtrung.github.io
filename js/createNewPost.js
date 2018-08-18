@@ -10,6 +10,7 @@ function getTodayTimestamp(){
 }
 
 function createNewPost(file){
+	let id = "01";
 	let createDay = getTodayTimestamp();
 	let {title, content} = file;
 	return {createDay, title, content};
@@ -17,7 +18,7 @@ function createNewPost(file){
 
 function pushToFirebase(newPost){
 	let firebaseRef = firebase.database().ref();
-	firebaseRef.child("Post").set(newPost);
+	firebaseRef.child("Post").child("post_01").set(newPost);
 }
 
 function handleFileSelect(evt) {
@@ -41,6 +42,7 @@ function handleFileSelect(evt) {
       // Closure to capture the file information.
       reader.onload = (function(theFile) {
         return function(e) {
+
         	let title = theFile.name.substring(0, theFile.name.lastIndexOf('.'));
             let content = e.target.result;
             let file = {title, content};
@@ -69,4 +71,12 @@ function handleFileSelect(evt) {
   dropZone.addEventListener('dragover', handleDragOver, false);
   dropZone.addEventListener('drop', handleFileSelect, false);
 
+
+function isInDatabase(){
+	return false;
+}
+
+function updatePost(){
+	
+}
 

@@ -3,6 +3,19 @@
 <head>
 	<title>Read File</title>
 	<meta charset="UTF-8">
+	<script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyDyZv8Rhxaoq-70SIhIKn85Dh56AUnYaTE",
+	    authDomain: "myblog-df8c7.firebaseapp.com",
+	    databaseURL: "https://myblog-df8c7.firebaseio.com",
+	    projectId: "myblog-df8c7",
+	    storageBucket: "myblog-df8c7.appspot.com",
+	    messagingSenderId: "510930786497"
+	  };
+	  firebase.initializeApp(config);
+	</script>
 </head>
 <body>
 <style>
@@ -14,21 +27,8 @@
 </style>
 <div id="drop_zone">Drop files here</div>
 <output id="list"></output>
-<script type="text/javascript" src= "./js/createNewPost.js"></script>
+<!-- <script type="text/javascript" src= "./js/createNewPost.js"></script> -->
+<script type="text/javascript" src= "./test.js"></script>
 </body>
-
-<script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDyZv8Rhxaoq-70SIhIKn85Dh56AUnYaTE",
-    authDomain: "myblog-df8c7.firebaseapp.com",
-    databaseURL: "https://myblog-df8c7.firebaseio.com",
-    projectId: "myblog-df8c7",
-    storageBucket: "myblog-df8c7.appspot.com",
-    messagingSenderId: "510930786497"
-  };
-  firebase.initializeApp(config);
-</script>
 
 </html>
