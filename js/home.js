@@ -1,81 +1,124 @@
-// let MYNAME = Symbol('myname');
-// class Car{
-// 	constructor(make, model){
-// 		this.make = make;
-// 		this.model = model;
-// 	}
-// 	[MYNAME](){
-// 		return {
-// 			make: this.make,
-// 			model: this.model
-// 		};
-// 	}
-// 	["add"](a, b){
-// 		return a + b;
-// 	}
+const recentPosts = document.querySelector(".recentItems");
 
-// 	[1 + 2](){
-// 		return "three";
-// 	}
-// }
-// let MazdaMPV = new Car("Mazda", "MPV");
-// console.log(MazdaMPV.add(4, 5));
-// console.log(MazdaMPV[3]());
-// console.log(MazdaMPV[MYNAME]());
-// 
+function renderRecentPost(doc) {
+	let li = document.createElement('li');
+	let title = document.createElement('a');
 
-// let CAT = Symbol('cat');
-// class features{
-// 	constructor(name, age){
-// 		this.name = name;
-// 		this.age = age;
-// 	}
-// 	[CAT](){
-// 		return {
-// 			name: this.name,
-// 			age: this.age
-// 		};
-// 	}
-// 	["eat"](a, b){
-// 		return a + b;
-// 	}
-// }
-// let Tom = new features("Tom", 2);
-// console.log(Tom[CAT]());
-// console.log(Tom.eat("mouse", "rice"));
+	li.setAttribute('class', 'recentItem');
+	title.setAttribute('href', '#');
+	title.textContent = doc.data().title;
 
+	li.appendChild(title);
 
-let recentText = document.getElementById("recentText");
+	recentPosts.appendChild(li);
+}
 
-function getRecentText(){
-	let firebaseRef = firebase.database().ref().child("recentText");
-	firebaseRef.on("value", function(datasnapshot){
-		recentText.innerText = datasnapshot.val();
-	});
+function getRecentText() {
+	db.collection('Posts').orderBy('createDay', 'desc').limit(3).get().then((snapshot) => {
+		snapshot.docs.forEach(doc => {
+			renderRecentPost(doc);
+		})
+	})
 }
 
 getRecentText();
 
-let postDay = document.getElementById("postDay");
-let postTitle = document.getElementById("postTitle");
-// let postContent = document.getElementById("postContent");
+const posts = document.querySelector("div#posts");
 
-function getPost(){
-	let firebaseRef = firebase.database().ref().child("Post");
-	let post;
-	firebaseRef.on("value", function(datasnapshot){
-		post = datasnapshot.val();
-		let {createDay, title, content} = post;
-		postDay.innerText = createDay;
-		postTitle.innerText = title;
-		// let pTag = document.createElement("P");
-		// postContent.appendChild(pTag);
-		// console.log(postContent.querySelectorAll('p'));
-		// postContent.querySelectorAll('p')[0].innerHTML = content;
-	});
-	
-
+function createPostImg(){
+	let img = document.createElement('img');
+	let imgSrc = "https://goo.gl/uTbQiH"
+	img.src = imgSrc;
+	img.className = "item-image img-responsive col-lg-4 col-md-4 col-sm-4 col-xs-4";
+	return img;
 }
 
-getPost();
+function createPostTitle(title){
+	let postTitle = document.createElement('a');
+	postTitle.id = "postTitle";
+	postTitle.className = "title";
+	postTitle.href = "http://toidicode.com";
+	postTitle.target = "_bank";
+	postTitle.textContent = title;
+	return postTitle;
+}
 
+function createAuthorLink(author, href){
+	let authorLink = document.createElement('a');
+	authorLink.href = href;
+	authorLink.textContent = author;
+	return authorLink;
+}
+
+function createPostDayElement(createDay){
+	let postDay = document.createElement("span");
+	postDay.id = "postDay";
+	postDay.className = "time";
+	postDay.textContent = createDay.toLocaleDateString();
+	return postDay;
+}
+
+function renderPost(doc) {
+	let { createDay, author, title, content } = doc.data();
+	createDay = createDay.toDate();
+
+	let divContainer = document.createElement('div');
+	divContainer.className = "item col-lg-12 col-md-12 col-sm-12 col-xs-12";
+	
+	let img = createPostImg();
+	
+	let divContainerContent = document.createElement("div");
+	divContainerContent.className = "item-information col-lg-8 col-md-8 col-sm-8 col-xs-8";
+	
+	let postTitle = createPostTitle(title);
+
+	let general = document.createElement('div');
+	general.className = "general";
+
+	let authorSpan = document.createElement("span");
+	authorSpan.className = "author";
+	let authorLink = createAuthorLink(author, "https://goo.gl/uTbQiH");
+	authorSpan.appendChild(authorLink);
+	let postDay = createPostDayElement(createDay);
+	
+	let comment = document.createElement('span');
+	comment.class = "comment";
+
+	let commentLink = document.createElement('a');
+	commentLink.href = "#";
+	commentLink.textContent = "2 comments";
+	comment.appendChild(commentLink);
+
+	general.appendChild(authorSpan);
+	general.appendChild(postDay);
+	general.appendChild(comment);
+
+	let postContent = document.createElement('div');
+	postContent.id = "postContent";
+	postContent.className = "content";
+	
+	let readmore = document.createElement("span");
+	readmore.className = "readmore";
+	let readmoreLink = document.createElement('a');
+	readmoreLink.href = "#";
+	readmoreLink.textContent = "READ MORE";
+	readmore.appendChild(readmoreLink);
+	
+	postContent.appendChild(readmore);
+
+	divContainerContent.appendChild(postTitle);
+	divContainerContent.appendChild(general);
+	divContainerContent.appendChild(postContent);
+	
+	divContainer.appendChild(img);
+	divContainer.appendChild(divContainerContent);
+
+	posts.appendChild(divContainer);
+}
+		
+db.collection('Posts').get().then((snapshot) => {
+	snapshot.docs.forEach(doc => {
+		renderPost(doc);
+	})
+})
+		

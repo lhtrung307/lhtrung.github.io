@@ -1,24 +1,29 @@
-function getTodayTimestamp(){
-	var today = new Date();
-	var dd = today.getDate();
-	dd = dd < 10 ? '0' + dd : dd;
-	var mm = today.getMonth()+1; //January is 0!
-	mm = mm < 10 ? '0' + mm: mm;
-	var yyyy = today.getFullYear();
-	today = dd + '/' + mm + '/' + yyyy;
-	return today;
-}
+// function getTodayTimestamp(){
+// 	var today = new Date();
+// 	return today.toLocaleDateString();
+// }
 
 function createNewPost(file){
 	let id = "01";
-	let createDay = getTodayTimestamp();
+  let createDay = new Date();
+  let author = 'Mike';
 	let {title, content} = file;
-	return {createDay, title, content};
+	return {createDay, author, title, content};
 }
 
+// function pushToFirebase(newPost){
+// 	let firebaseRef = firebase.database().ref();
+// 	firebaseRef.child("Post").child("post_01").set(newPost);
+// }
+
 function pushToFirebase(newPost){
-	let firebaseRef = firebase.database().ref();
-	firebaseRef.child("Post").child("post_01").set(newPost);
+  let {createDay, author, title, content} = newPost;
+  db.collection('Posts').add({
+    createDay,
+    title,
+    content,
+    author
+  })
 }
 
 function handleFileSelect(evt) {
@@ -60,16 +65,16 @@ function handleFileSelect(evt) {
 }
 
 
-  function handleDragOver(evt) {
-    evt.stopPropagation();
-    evt.preventDefault();
-    evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
-  }
+function handleDragOver(evt) {
+  evt.stopPropagation();
+  evt.preventDefault();
+  evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
+}
 
-  // Setup the dnd listeners.
-  var dropZone = document.getElementById('drop_zone');
-  dropZone.addEventListener('dragover', handleDragOver, false);
-  dropZone.addEventListener('drop', handleFileSelect, false);
+// Setup the dnd listeners.
+var dropZone = document.getElementById('drop_zone');
+dropZone.addEventListener('dragover', handleDragOver, false);
+dropZone.addEventListener('drop', handleFileSelect, false);
 
 
 function isInDatabase(){

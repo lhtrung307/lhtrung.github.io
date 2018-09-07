@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<title>Read File</title>
 	<meta charset="UTF-8">
-	<script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
-	<script>
-	  // Initialize Firebase
-	  var config = {
-	    apiKey: "AIzaSyDyZv8Rhxaoq-70SIhIKn85Dh56AUnYaTE",
-	    authDomain: "myblog-df8c7.firebaseapp.com",
-	    databaseURL: "https://myblog-df8c7.firebaseio.com",
-	    projectId: "myblog-df8c7",
-	    storageBucket: "myblog-df8c7.appspot.com",
-	    messagingSenderId: "510930786497"
-	  };
-	  firebase.initializeApp(config);
-	</script>
+	<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase-firestore.js"></script>
 </head>
+
 <body>
-<style>
-  div {
+	<style>
+		div {
     height: 100px;
     border: 1px solid #000;
     margin: 10px 5px 0 0;
   }
 </style>
-<div id="drop_zone">Drop files here</div>
-<output id="list"></output>
-<!-- <script type="text/javascript" src= "./js/createNewPost.js"></script> -->
-<script type="text/javascript" src= "./test.js"></script>
+	<div id="drop_zone">Drop files here</div>
+	<output id="list"></output>
+
+	<script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCANdqIXQkGFU5cMhj7-3oOdhi5mqs8zY4",
+            authDomain: "testdata-6c8c2.firebaseapp.com",
+            databaseURL: "https://testdata-6c8c2.firebaseio.com",
+            projectId: "testdata-6c8c2",
+            storageBucket: "testdata-6c8c2.appspot.com",
+            messagingSenderId: "27728491369"
+        };
+        firebase.initializeApp(config);
+        const db = firebase.firestore();
+        db.settings({timestampsInSnapshots: true});
+    </script>
+	<script type="text/javascript" src="./js/createNewPost.js"></script>
 </body>
 
 </html>

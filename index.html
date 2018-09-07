@@ -1,256 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<link rel="stylesheet" href="./css/home.css">
 	<!-- <link rel="stylesheet" href="../library/bootstrap-3.3.7-dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../library/bootstrap-3.3.7-dist/js/bootstrap.min.js">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="./library/font-awesome-4.7.0/css/font-awesome.min.css">
+	<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase-firestore.js"></script>
 	<meta charset="UTF-8">
 	<title>Document</title>
 </head>
+
 <body>
 
-<script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDyZv8Rhxaoq-70SIhIKn85Dh56AUnYaTE",
-    authDomain: "myblog-df8c7.firebaseapp.com",
-    databaseURL: "https://myblog-df8c7.firebaseio.com",
-    projectId: "myblog-df8c7",
-    storageBucket: "myblog-df8c7.appspot.com",
-    messagingSenderId: "510930786497"
-  };
-  firebase.initializeApp(config);
-</script>
-
-<div id="header" class="header container-fluid">
-	<div class="row">
-		<!-- <div class="hLeft col-lg-3 col-md-3 col-sm-3 col-xs-3">
+	<div id="header" class="header container-fluid">
+		<div class="row">
+			<!-- <div class="hLeft col-lg-3 col-md-3 col-sm-3 col-xs-3">
 			<img src="https://getcheapholidayinsurance.co.uk/uploads/427/the-best-cute-dog-wide-with-high-resolution-wallpaper-pitbull-hd-pic-of-chocolate-labs-puppies-styles-and-ideas.jpg" alt="" class="img-responsive logo">
 			<div id="logo">MIKE</div>
 		</div>
 		<div class="hCenter col-lg-6 col-md-6 col-sm-6 col-xs-6"></div>
 		<div class="hRight col-lg-3 col-md-3 col-sm-3 col-xs-3"></div> -->
-		<img src="https://i.ytimg.com/vi/yqXC4wlIAbI/maxresdefault.jpg" alt="" class="img-responsive background col-lg-12 col-md-12 col-sm-12 col-xs-12">
-	</div>
-</div>
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">mike's blog</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Lập trình
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Page 1-1</a></li>
-          <li><a href="#">Page 1-2</a></li>
-          <li><a href="#">Page 1-3</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Thảo luận
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Page 1-1</a></li>
-          <li><a href="#">Page 1-2</a></li>
-          <li><a href="#">Page 1-3</a></li>
-        </ul>
-      </li>
-       <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Page 1-1</a></li>
-          <li><a href="#">Page 1-2</a></li>
-          <li><a href="#">Page 1-3</a></li>
-        </ul>
-      </li>
-       <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Page 1-1</a></li>
-          <li><a href="#">Page 1-2</a></li>
-          <li><a href="#">Page 1-3</a></li>
-        </ul>
-      </li>
-      <li><a href="#">About me</a></li>
-    </ul>
-    <form class="navbar-form navbar-left" action="/action_page.php">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search">
-      </div>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
-  </div>
-</nav>
-
-
-<div id="center" class="center container">
-	<div class="row">
-		<div class="cLeft col-lg-7 col-md-7 col-sm-12 col-xs-12"> 
-			<div class="slider"></div>
-			<div class="mainInfor col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<div class="item col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<img src="https://goo.gl/uTbQiH" alt="" class="item-image img-responsive col-lg-4 col-md-4 col-sm-4 col-xs-4">
-				<div class="item-information col-lg-8 col-md-8 col-sm-8 col-xs-8">
-					<a id="postTitle" class = "title" href="http://toidicode.com" target="_bank"></a>
-					<div class="general">
-						<span class="author"><a href="#">Mike</a></span>
-						<span id="postDay" class="time"></span>
-						<span class="comment"><a href="#">2 comments</a></span>
-					</div>
-					<div id="postContent" class="content">
-						<span class="readmore"><a href="#">READ MORE...</a></span>
-					</div>
-				</div>
-			</div>
-
-			<div class="item col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<img src="https://goo.gl/uTbQiH" alt="" class="item-image img-responsive col-lg-4 col-md-4 col-sm-4 col-xs-4">
-				<div class="item-information col-lg-8 col-md-8 col-sm-8 col-xs-8">
-					<a class = "title" href="http://toidicode.com" target="_bank">Multiple Sites: Does It Hurt or Help SEO?</a>
-					<div class="general">
-						<span class="author"><a href="#">ALLEN</a></span>
-						<span class="time">OCTOBER 12, 2017</span>
-						<span class="comment"><a href="#">2 comments</a></span>
-					</div>
-					<div class="content">
-						This is an example of a WordPress post, you could edit this to put information about yourself or your site so readers know where you are coming from. You can…
-						<span class="readmore"><a href="#">READ MORE...</a></span>
-					</div>
-				</div>
-			</div>
-
-			<div class="item col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<img src="https://goo.gl/uTbQiH" alt="" class="item-image img-responsive col-lg-4 col-md-4 col-sm-4 col-xs-4">
-				<div class="item-information col-lg-8 col-md-8 col-sm-8 col-xs-8">
-					<a class = "title" href="http://toidicode.com" target="_bank">Multiple Sites: Does It Hurt or Help SEO?</a>
-					<div class="general">
-						<span class="author"><a href="#">ALLEN</a></span>
-						<span class="time">OCTOBER 12, 2017</span>
-						<span class="comment"><a href="#">2 comments</a></span>
-					</div>
-					<div class="content">
-						This is an example of a WordPress post, you could edit this to put information about yourself or your site so readers know where you are coming from. You can…
-						<span class="readmore"><a href="#">READ MORE...</a></span>
-					</div>
-				</div>
-			</div>
-
-			<div class="item col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<img src="https://goo.gl/uTbQiH" alt="" class="item-image img-responsive col-lg-4 col-md-4 col-sm-4 col-xs-4">
-				<div class="item-information col-lg-8 col-md-8 col-sm-8 col-xs-8">
-					<a class = "title" href="http://toidicode.com" target="_bank">Multiple Sites: Does It Hurt or Help SEO?</a>
-					<div class="general">
-						<span class="author"><a href="#">ALLEN</a></span>
-						<span class="time">OCTOBER 12, 2017</span>
-						<span class="comment"><a href="#">2 comments</a></span>
-					</div>
-					<div class="content">
-						This is an example of a WordPress post, you could edit this to put information about yourself or your site so readers know where you are coming from. You can…
-						<span class="readmore"><a href="#">READ MORE...</a></span>
-					</div>
-				</div>
-			</div>
-
-			<div class="item col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<img src="https://goo.gl/uTbQiH" alt="" class="item-image img-responsive col-lg-4 col-md-4 col-sm-4 col-xs-4">
-				<div class="item-information col-lg-8 col-md-8 col-sm-8 col-xs-8">
-					<a class = "title" href="http://toidicode.com" target="_bank">Multiple Sites: Does It Hurt or Help SEO?</a>
-					<div class="general">
-						<span class="author"><a href="#">ALLEN</a></span>
-						<span class="time">OCTOBER 12, 2017</span>
-						<span class="comment"><a href="#">2 comments</a></span>
-					</div>
-					<div class="content">
-						This is an example of a WordPress post, you could edit this to put information about yourself or your site so readers know where you are coming from. You can…
-						<span class="readmore"><a href="#">READ MORE...</a></span>
-					</div>
-				</div>
-			</div>
-			</div>
-
-	<ul class="pagination">
-  <li><a href="#">1</a></li>
-  <li class="active"><a href="#">2</a></li>
-  <li><a href="#">3</a></li>
-  <li><a href="#">4</a></li>
-  <li><a href="#">5</a></li>
-</ul>
-		</div>	
-
-
-		<div class="cRight col-lg-4 col-md-4 col-sm-12 col-xs-12">
-			<div class="recent">
-				<span class="recentTitle">RECENT POST</span>
-			<div class="recentItems">
-				<li class="recentItem"><a id="recentText" href="#"></a></li>
-				<li class="recentItem"><a href="#">YouTube Users on iOS Can Now Live Stream Their Screens. YouTube Users on iOS Can Now Live Stream Their Screens</a></li>				
-				<li class="recentItem"><a href="#">YouTube Users on iOS Can Now Live Stream Their Screens. YouTube Users on iOS Can Now Live Stream Their Screens</a></li>	
-				<li class="recentItem"><a href="#">YouTube Users on iOS Can Now Live Stream Their Screens</a></li>	
-				<li class="recentItem"><a href="#">YouTube Users on iOS Can Now Live Stream Their Screens</a></li>	
-			</div>
-			</div>
-
-			<div class="banner">
-				<img src="http://chothuephongdaotao.com/wp-content/uploads/2017/11/bnnr.jpg" alt="" class="img-responsive bannerImage">
-			</div>
-
-			<div class="recent">
-				<span class="recentTitle">RECENT COMMENTS</span>
-				<div class="recentItems">
-					<li class="recentItem"><a href="#">Allen on 3 Reasons SEO Is Incredibly Valuable to Your Company</a></li>
-					<li class="recentItem"><a href="#">Allen on 3 Reasons SEO Is Incredibly Valuable to Your Company</a></li>
-					<li class="recentItem"><a href="#">Allen on 3 Reasons SEO Is Incredibly Valuable to Your Company</a></li>
-					<li class="recentItem"><a href="#">Allen on 3 Reasons SEO Is Incredibly Valuable to Your Company</a></li>
-					<li class="recentItem"><a href="#">Allen on 3 Reasons SEO Is Incredibly Valuable to Your Company</a></li>
-				</div>
-			</div>
-
-			<div class="recent">
-				<span class="recentTitle">CATEGORIES</span>
-				<div class="recentItems">
-					<li class="recentItem"><a href="#">SEO Hacks</a></li>
-					<li class="recentItem"><a href="#">SEO Hacks</a></li>
-				<li class="recentItem"><a href="#">SEO Hacks</a></li>
-					<li class="recentItem"><a href="#">SEO Hacks</a></li>
-				</div>
-			</div>
-
-			<div class="recent">
-				<span class="recentTitle">TAGS</span>
-				<div class="tagName">
-					<a class="tagNameItem">FACEBOOK</a>
-					<a class="tagNameItem">FACEBOOK</a>
-					<a class="tagNameItem">FACEBOOK</a>
-					<a class="tagNameItem">FACEBOOK</a>
-					<a class="tagNameItem">FACEBOOK</a>
-					<a class="tagNameItem">FACEBOOK</a>
-					<a class="tagNameItem">FACEBOOK</a>
-					<a class="tagNameItem">FACEBOOK</a>					
-				</div>
-			</div>
-			
+			<img src="https://i.ytimg.com/vi/yqXC4wlIAbI/maxresdefault.jpg" alt="" class="img-responsive background col-lg-12 col-md-12 col-sm-12 col-xs-12">
 		</div>
-	</div>	
-</div>
+	</div>
 
-<script type="text/javascript" src= "./js/home.js"></script>
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">mike's blog</a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">Home</a></li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Lập trình
+						<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Page 1-1</a></li>
+						<li><a href="#">Page 1-2</a></li>
+						<li><a href="#">Page 1-3</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Thảo luận
+						<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Page 1-1</a></li>
+						<li><a href="#">Page 1-2</a></li>
+						<li><a href="#">Page 1-3</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1
+						<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Page 1-1</a></li>
+						<li><a href="#">Page 1-2</a></li>
+						<li><a href="#">Page 1-3</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1
+						<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Page 1-1</a></li>
+						<li><a href="#">Page 1-2</a></li>
+						<li><a href="#">Page 1-3</a></li>
+					</ul>
+				</li>
+				<li><a href="#">About me</a></li>
+			</ul>
+			<form class="navbar-form navbar-left" action="/action_page.php">
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Search">
+				</div>
+				<button type="submit" class="btn btn-default">Submit</button>
+			</form>
+		</div>
+	</nav>
 
 
-<div id="footer" class="footer container-fluid">
-	<div class="row"></div>
-</div>
+	<div id="center" class="center container">
+		<div class="row">
+			<div class="cLeft col-lg-7 col-md-7 col-sm-12 col-xs-12">
+				<div class="slider"></div>
+				<div id="posts" class="mainInfor col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="item col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<img src="https://goo.gl/uTbQiH" alt="" class="item-image img-responsive col-lg-4 col-md-4 col-sm-4 col-xs-4">
+						<div class="item-information col-lg-8 col-md-8 col-sm-8 col-xs-8">
+							<a class="title" href="http://toidicode.com" target="_bank">Multiple Sites: Does It Hurt or Help SEO?</a>
+							<div class="general">
+								<span class="author"><a href="#">ALLEN</a></span>
+								<span class="time">OCTOBER 12, 2017</span>
+								<span class="comment"><a href="#">2 comments</a></span>
+							</div>
+							<div class="content">
+								This is an example of a WordPress post, you could edit this to put information about yourself or your site so
+								readers know where you are coming from. You can…
+								<span class="readmore"><a href="#">READ MORE...</a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<ul class="pagination">
+					<li><a href="#">1</a></li>
+					<li class="active"><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+				</ul>
+			</div>
+
+
+			<div class="cRight col-lg-4 col-md-4 col-sm-12 col-xs-12">
+				<div class="recent">
+					<span class="recentTitle">RECENT POST</span>
+					<div class="recentItems">
+					</div>
+				</div>
+
+				<div class="banner">
+					<img src="http://chothuephongdaotao.com/wp-content/uploads/2017/11/bnnr.jpg" alt="" class="img-responsive bannerImage">
+				</div>
+
+				<div class="recent">
+					<span class="recentTitle">RECENT COMMENTS</span>
+					<div class="recentItems">
+						<li class="recentItem"><a href="#">Allen on 3 Reasons SEO Is Incredibly Valuable to Your Company</a></li>
+						<li class="recentItem"><a href="#">Allen on 3 Reasons SEO Is Incredibly Valuable to Your Company</a></li>
+					</div>
+				</div>
+
+				<div class="recent">
+					<span class="recentTitle">CATEGORIES</span>
+					<div class="recentItems">
+						<li class="recentItem"><a href="#">SEO Hacks</a></li>
+						<li class="recentItem"><a href="#">SEO Hacks</a></li>
+					</div>
+				</div>
+
+				<div class="recent">
+					<span class="recentTitle">TAGS</span>
+					<div class="tagName">
+						<a class="tagNameItem">FACEBOOK</a>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyCANdqIXQkGFU5cMhj7-3oOdhi5mqs8zY4",
+			authDomain: "testdata-6c8c2.firebaseapp.com",
+			databaseURL: "https://testdata-6c8c2.firebaseio.com",
+			projectId: "testdata-6c8c2",
+			storageBucket: "testdata-6c8c2.appspot.com",
+			messagingSenderId: "27728491369"
+		};
+		firebase.initializeApp(config);
+		const db = firebase.firestore();
+		db.settings({ timestampsInSnapshots: true });
+	</script>
+	<script type="text/javascript" src="./js/home.js"></script>
+
+
+	<div id="footer" class="footer container-fluid">
+		<div class="row"></div>
+	</div>
 
 </body>
+
 </html>
