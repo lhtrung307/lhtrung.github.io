@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Post</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/post.css" />
+    <script src="https://www.gstatic.com/firebasejs/5.4.2/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase-firestore.js"></script>
+    
+</head>
+<body id="Post">
+    
+    <script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyCANdqIXQkGFU5cMhj7-3oOdhi5mqs8zY4",
+			authDomain: "testdata-6c8c2.firebaseapp.com",
+			databaseURL: "https://testdata-6c8c2.firebaseio.com",
+			projectId: "testdata-6c8c2",
+			storageBucket: "testdata-6c8c2.appspot.com",
+			messagingSenderId: "27728491369"
+		};
+		firebase.initializeApp(config);
+		const db = firebase.firestore();
+		db.settings({ timestampsInSnapshots: true });
+	</script>
+    <script type="text/javascript" src="../js/post.js"></script>
+</body>
+</html>

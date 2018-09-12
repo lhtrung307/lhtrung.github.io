@@ -1,11 +1,14 @@
 const recentPosts = document.querySelector(".recentItems");
+const path = "./html/";
+const childPage = "post.html";
 
 function renderRecentPost(doc) {
 	let li = document.createElement('li');
 	let title = document.createElement('a');
 
-	li.setAttribute('class', 'recentItem');
-	title.setAttribute('href', '#');
+	li.class = 'recentItem';
+	let href = generatePostLink(doc.id);
+	title.href = href;
 	title.textContent = doc.data().title;
 
 	li.appendChild(title);
@@ -33,11 +36,11 @@ function createPostImg(){
 	return img;
 }
 
-function createPostTitle(title){
+function createPostTitle(title, href){
 	let postTitle = document.createElement('a');
 	postTitle.id = "postTitle";
 	postTitle.className = "title";
-	postTitle.href = "http://toidicode.com";
+	postTitle.href = href;
 	postTitle.target = "_bank";
 	postTitle.textContent = title;
 	return postTitle;
@@ -58,6 +61,25 @@ function createPostDayElement(createDay){
 	return postDay;
 }
 
+function createCommentLink(href){
+	let commentLink = document.createElement('a');
+	commentLink.href = href;
+	commentLink.textContent = "2 comments";
+	return commentLink;
+}
+
+function createReadMoreLink(href){
+	let readmoreLink = document.createElement('a');
+	readmoreLink.href = href;
+	readmoreLink.textContent = "READ MORE";
+	return readmoreLink;
+}
+
+function generatePostLink(postId){
+	let postPath = path + childPage + "?id=" + postId;
+	return postPath;
+}
+
 function renderPost(doc) {
 	let { createDay, author, title, content } = doc.data();
 	createDay = createDay.toDate();
@@ -70,23 +92,22 @@ function renderPost(doc) {
 	let divContainerContent = document.createElement("div");
 	divContainerContent.className = "item-information col-lg-8 col-md-8 col-sm-8 col-xs-8";
 	
-	let postTitle = createPostTitle(title);
+	let postPath = generatePostLink(doc.id);
+	let postTitle = createPostTitle(title, postPath);
 
 	let general = document.createElement('div');
 	general.className = "general";
 
 	let authorSpan = document.createElement("span");
 	authorSpan.className = "author";
-	let authorLink = createAuthorLink(author, "https://goo.gl/uTbQiH");
+	let authorLink = createAuthorLink(author, "#");
 	authorSpan.appendChild(authorLink);
 	let postDay = createPostDayElement(createDay);
 	
 	let comment = document.createElement('span');
 	comment.class = "comment";
 
-	let commentLink = document.createElement('a');
-	commentLink.href = "#";
-	commentLink.textContent = "2 comments";
+	let commentLink = createCommentLink("#")
 	comment.appendChild(commentLink);
 
 	general.appendChild(authorSpan);
@@ -99,9 +120,7 @@ function renderPost(doc) {
 	
 	let readmore = document.createElement("span");
 	readmore.className = "readmore";
-	let readmoreLink = document.createElement('a');
-	readmoreLink.href = "#";
-	readmoreLink.textContent = "READ MORE";
+	let readmoreLink = createReadMoreLink(postPath);
 	readmore.appendChild(readmoreLink);
 	
 	postContent.appendChild(readmore);
