@@ -21,8 +21,8 @@ function showSlides() {
 }
 
 const recentPosts = document.querySelector(".recentItems");
-const path = "./html/";
-const childPage = "post.html";
+const path = "";
+const childPage = "page1.html";
 
 function renderRecentPost(doc) {
 	let li = document.createElement('li');

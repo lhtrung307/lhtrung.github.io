@@ -77,7 +77,7 @@
     </nav>
 
 <div class="content container-fluid">
-    <div class="row">
+    <div id="Post" class="row">
         <div class="left col-lg-8 col-md-8 col-sm-12 col-xs-12">
             <div class="title">CHUYỆN HỌC TIẾNG ANH – PHẦN 1: TÔI ĐÃ HỌC TIẾNG ANH NHƯ THẾ NÀO</div>
             <div class="time">25/02/2016</div>
@@ -86,6 +86,21 @@
     </div>
 </div>
     <button onclick="topFunction()" id="myBtn" title="Go to top"> <i class="fa fa-hand-o-up" aria-hidden="true"></i></button>
+    
+    <script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyCANdqIXQkGFU5cMhj7-3oOdhi5mqs8zY4",
+			authDomain: "testdata-6c8c2.firebaseapp.com",
+			databaseURL: "https://testdata-6c8c2.firebaseio.com",
+			projectId: "testdata-6c8c2",
+			storageBucket: "testdata-6c8c2.appspot.com",
+			messagingSenderId: "27728491369"
+		};
+		firebase.initializeApp(config);
+		const db = firebase.firestore();
+		db.settings({ timestampsInSnapshots: true });
+	</script>
     <script type="text/javascript" src="./js/page1.js"></script>
 </body>
 
