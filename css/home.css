@@ -1,147 +1,296 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(155, 153, 153) !important;
+}
 
+* {
 body{
    background-color: gray !important;
-   }
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
 
-.header .background{
-	padding: 0;
-}
-.header .background{
-	max-height: 300pt;
-}
-.center{
-	/*position: relative;*/
-}
-.center .cLeft{	
-	float: left;
-	padding: 0pt;
-}
-.center .cLeft .mainInfor{
-	border: 0.5px solid gray;
-	background-color: white;
+
+.navbar-nav>li>a:hover{
+    border-bottom: 3px solid red !important;
 
 }
-.center .cLeft .mainInfor .item{
-	border-bottom: 0.5px solid #B0ABAB;
-	/*margin-bottom: 20pt;
-	padding-bottom: 20pt;*/
-	padding: 15pt 0pt; 
+.dropdown:hover .dropdown-menu{
+    display: block !important;
+}
+ .dropdown-menu>li>a:hover{
+     background-color: black !important;
+     color: white !important;
+ }
+.header {
+    position: relative;
+}
 
+.bg-image {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-.center .cLeft .mainInfor .item .item-image{
-	/*padding: 0;*/
-	
+
+.bg-text {
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
 }
-.center .cLeft .mainInfor .item .item-information{
-	/*padding: 0;*/
+
+/* slide */
+
+.mySlides {
+    display: none;
 }
-a.title{
-	color: black;
-	font-size: 20pt;
-	font-style: italic;
+
+.slide-img {
+    vertical-align: middle;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    padding: 0;
+    margin: 0;
 }
-a.title:hover{
-	color: red;
+
+/* Slideshow container */
+
+.slideshow {
+    position: relative;
+}
+
+/* Caption text */
+
+.text {
+    color: black;
+    font-size: 25px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+.text:hover {
+    color: red;
+    text-decoration: none;
+}
+
+/* Number text (1/3 etc) */
+
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active {
+    background-color: #717171;
+}
+
+/* Fading animation */
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+/* On smaller screens, decrease text size */
+
+@media only screen and (max-width: 300px) {
+    .text {
+        font-size: 11px
+    }
+}
+
+.left {
+    background-color: white;
+    padding-top: 15px;
+}
+
+.mainInfor {
+    border: 0.5px solid rgb(235, 235, 235);
+    margin-top: 15px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.mainInfor .item {
+    /* margin-bottom: 15px; */
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-bottom: 0.5px solid rgb(235, 235, 235);
+}
+
+.item .item-image {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.item .item-information {
+    padding-right: 0px;
+}
+
+.item-information a.title {
+    font-size: 15pt;
+    color: black;
+}
+
+.item-information a.title:hover {
+    cursor: pointer;
+    color: red;
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+li i {
+    padding-right: 5px;
+}
+
+.item-information .general {}
+
+.general .author {
+    margin-right: 5px;
+}
+
+.general .time {
+    margin-right: 5px;
+}
+
+.general .comment {}
+
+.right {
+    background-color: white;
+    border-bottom: 0.5px solid rgb(235, 235, 235);
+    border-right: 0.5px solid rgb(235, 235, 235);
+    border-left: 0.5px solid rgb(235, 235, 235);
+    padding-top: 10px;
+}
+
+.right .recent {
+    border-bottom: 0.5px solid rgb(235, 235, 235);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.recent .recentTitle {
+    font-weight: bold;
+    font-size: 13pt;
+}
+
+.center .right .recent .tagName {
+    display: block;
+}
+
+.recent .tagName .tagNameItem {
+    background-color: #CAC7C7;
+    padding: 5pt;
+    display: inline-block !important;
+    margin-bottom: 5pt;
+}
+
+.recent .tagName a {
+    color: black;
+}
+
+.recent .tagName a:hover {
+    color: red;
     cursor: pointer;
     text-decoration: none;
 }
-.center .cLeft .mainInfor .item .item-information{
-	
-}
-.general{
-	margin-bottom: 10pt;
-	/*margin-top: 10pt;*/
-}
-.general .author{
-	margin-right: 10pt;
-}
-.general .time{
-	margin-right: 10pt;
+
+.right .recentTitle {
+    font-weight: bold;
+    font-size: 15pt;
 }
 
-.center .cRight{
-	float: right;
-	/*position: relative;*/
-	padding: 0pt;
-	
-}
-.center .cRight .recent{
-	border: 0.5px solid gray;
-	padding-top: 10pt;
-	padding-bottom: 10pt;
-	padding-left: 10pt;
-	margin-bottom: 10pt;
-	background-color: white;
-}
-.center .cRight .recent .tagName{
-display: block;
-}
-.recent .tagName .tagNameItem{
-background-color: #CAC7C7;
-padding: 5pt;
-display: inline-block !important;
-margin-bottom: 5pt;
-}
-.recent .tagName a{
-	color: black;
+.right .recentItems .recentItem a {
+    color: black;
 }
 
-.recent .tagName a:hover{
-	color: red;
-	cursor: pointer;
-	text-decoration: none;
-}
-
-.cRight .recentTitle{
-	font-weight: bold;
-	font-size: 15pt;
-/*	margin-top: 10pt;*/
-	/*position: absolute;*/
-
-}
-.cRight .recentItems .recentItem{
-margin-bottom: 10pt;
-}
-.cRight .recentItems .recentItem a{
-color: black;
-
-}
-
-.cRight .recentItems .recentItem a:hover{
-	color: red;
- 	cursor: pointer;
+.right .recentItems .recentItem a:hover {
+    color: red;
+    cursor: pointer;
     text-decoration: none;
 }
-.cRight .banner{
-	margin: 10pt 0pt;
+
+.right .banner {
+    margin-bottom: 15px;
 }
 
-
-/*.header .hLeft #logo{
-	text-align: center;
-	color: blue;
-	font-size: 35pt;
-  	font-weight: 600;
-  	font-style: italic;  	
-	
-}*/
-
-
-/*.center{
-	width: 100%;
-	height: 800pt;
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: black; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
 }
-.center .cLeft{
-	background-color: black;
-	height: 800pt;
+
+#myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
 }
-.center .cRight{
-	background-color: Pink;
-	height: 800pt;
-}
-.footer{
-	background-color: blue;
-	width: 100%;
-	height: 300pt;
-}*/
