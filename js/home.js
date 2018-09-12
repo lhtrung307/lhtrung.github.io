@@ -20,7 +20,7 @@ function showSlides() {
 	setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
 
-const recentPosts = document.querySelector(".recentItems");
+const recentPosts = document.getElementById("recentPosts");
 const path = "";
 const childPage = "page1.html";
 
@@ -28,7 +28,7 @@ function renderRecentPost(doc) {
 	let li = document.createElement('li');
 	let title = document.createElement('a');
 
-	li.class = 'recentItem';
+	li.className = 'recentItem';
 	let href = generatePostLink(doc.id);
 	title.href = href;
 	title.textContent = doc.data().title;
@@ -38,15 +38,29 @@ function renderRecentPost(doc) {
 	recentPosts.appendChild(li);
 }
 
-function getRecentText() {
-	db.collection('Posts').orderBy('createDay', 'desc').limit(3).get().then((snapshot) => {
+function getRecentText(_callback) {
+	db.collection('Posts').orderBy('createDay', 'desc').limit(5).get().then((snapshot) => {
 		snapshot.docs.forEach(doc => {
 			renderRecentPost(doc);
 		})
+		_callback();//wait until render all recentItem and add icon
 	})
 }
 
-getRecentText();
+getRecentText(addIconToRecentItem);
+
+function addIconToRecentItem(){
+	let recentItems = document.getElementsByClassName("recentItem");
+	console.log(recentItems);
+	for(let i = 0; i < recentItems.length; i++){
+		let icon = document.createElement("i");
+		icon.className = "fa fa-hand-o-right";
+		icon.setAttribute("aria-hidden","true");
+		recentItems[i].insertBefore(icon, recentItems[i].firstChild);
+		console.log(recentItems[i].innerHTML);
+	}
+}
+
 
 const posts = document.querySelector("div#posts");
 
