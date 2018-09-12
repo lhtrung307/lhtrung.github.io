@@ -7,7 +7,6 @@ body {
 }
 
 * {
-body{
    background-color: gray !important;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -204,7 +203,7 @@ li i {
     padding-right: 5px;
 }
 
-.item-information .general {}
+/* .item-information .general {} */
 
 .general .author {
     margin-right: 5px;
@@ -214,7 +213,7 @@ li i {
     margin-right: 5px;
 }
 
-.general .comment {}
+/* .general .comment {} */
 
 .right {
     background-color: white;
